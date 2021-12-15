@@ -15,3 +15,14 @@ def index(request):
             'member' : member,
         }
     )
+
+def members_page(request, pk):
+    member = members.objects.get(pk=pk)
+
+    return render(
+        request,
+        'members/member_info.html',
+        {
+            'member' : member
+        }
+    )
